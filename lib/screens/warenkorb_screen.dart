@@ -79,9 +79,11 @@ class WarenkorbScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "place order",
-              style: GoogleFonts.lato(fontSize: 32),
+            GestureDetector(
+              onTap: () {
+                // TODO start order action here
+              },
+              child: _buildPlaceOrderButton(),
             ),
             IconButton(
               onPressed: () {
@@ -90,6 +92,28 @@ class WarenkorbScreen extends StatelessWidget {
               icon: Icon(Icons.clear),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlaceOrderButton() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.greenAccent,
+        border: Border.all(
+          width: 3.0,
+          color: Colors.green,
+        ),
+        borderRadius: BorderRadius.all(
+            Radius.circular(12.0) //         <--- border radius here
+            ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 4.0),
+        child: Text(
+          "order",
+          style: GoogleFonts.lato(fontSize: 32),
         ),
       ),
     );
