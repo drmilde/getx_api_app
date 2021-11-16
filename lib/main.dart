@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getx_api_app/home_screen.dart';
+
+import 'screens/startup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: StartupScreen(),
     );
   }
 }

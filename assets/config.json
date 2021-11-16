@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Milde",
+    "vorname": "Jan-Torsten",
+    "geburtsdatum": "28.9.1965",
+    "kenntnisse": [
+      "java",
+      "dart",
+      "flutter"
+    ],
+    "hobbies": [
+      "programmieren",
+      "lesen",
+      "sauna"
+    ]
+  }
+]
