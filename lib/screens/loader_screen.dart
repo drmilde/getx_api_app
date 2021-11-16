@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:getx_api_app/model/configuration.dart';
+import 'package:getx_api_app/screens/home_screen.dart';
 import 'package:getx_api_app/services/remote_services.dart';
 
 class LoaderScreen extends StatefulWidget {
@@ -69,7 +70,22 @@ class _LoaderScreenState extends State<LoaderScreen> {
             ),
           ),
         ),
+        _weiterButton()
       ],
+    );
+  }
+
+  Widget _weiterButton() {
+    return Center(
+      child: Container(
+        child: ElevatedButton(
+          child: Text("weiter"),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+          },
+        ),
+      ),
     );
   }
 }
