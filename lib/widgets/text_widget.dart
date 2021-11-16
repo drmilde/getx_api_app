@@ -8,16 +8,19 @@ class TextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 300,
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(text!,
-              textAlign: TextAlign.justify,
-              style: GoogleFonts.aBeeZee(
-                fontSize: 20,
-              )),
-        ));
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+          width: double.infinity,
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(text!,
+                textAlign: TextAlign.justify,
+                style: GoogleFonts.aBeeZee(
+                  fontSize: 20,
+                )),
+          )),
+    );
   }
 }

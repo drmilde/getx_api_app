@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:getx_api_app/model/configuration.dart';
 import 'package:getx_api_app/screens/home_screen.dart';
 import 'package:getx_api_app/services/remote_services.dart';
+import 'package:getx_api_app/widgets/text_widget.dart';
 
 class LoaderScreen extends StatefulWidget {
   @override
@@ -42,8 +43,12 @@ class _LoaderScreenState extends State<LoaderScreen> {
     return Column(
       children: [
         Container(
-          child: Text("Die geladene Konfiguration"),
+          child: TextWidget("Hier wird die Konfiguration aus einer"
+              " JSON-Datei geladen. Aktuell befindet sich die Datei"
+              " im Assets Folder der Anwendung.\n"
+              "Das Laden der Daten erfolgt über einen FutureBuilder."),
         ),
+        _space100(),
         Expanded(
           child: Container(
             child: ListView.builder(
@@ -70,8 +75,15 @@ class _LoaderScreenState extends State<LoaderScreen> {
             ),
           ),
         ),
-        _weiterButton()
+        _weiterButton(),
+        _space100()
       ],
+    );
+  }
+
+  Widget _space100() {
+    return SizedBox(
+      height: 100,
     );
   }
 

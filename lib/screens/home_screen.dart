@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:getx_api_app/controller/product_controller.dart';
 import 'package:getx_api_app/widgets/product_tile.dart';
+import 'package:getx_api_app/widgets/text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   final ProductController productController = Get.put(ProductController());
@@ -18,7 +19,9 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child: Text("Hallo"),
+            child: TextWidget("Hier werden die Daten der Anwendung geladen."
+                " Acuh hier wird asynchron gearbeitet und die Daten in einem"
+                " GetxController als Observable abgelegt."),
           ),
           Expanded(
             child: Obx(() => buildStaggeredGridView()),
