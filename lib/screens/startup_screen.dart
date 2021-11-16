@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getx_api_app/screens/loader_screen.dart';
 import 'package:getx_api_app/widgets/text_widget.dart';
+import 'package:rive/rive.dart';
 
 class StartupScreen extends StatelessWidget {
   const StartupScreen({Key? key}) : super(key: key);
@@ -15,14 +16,32 @@ class StartupScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _space100(),
-            Expanded(
-                child: Center(
+            //_space100(),
+            Container(
+              color: Colors.lime,
+              //height: MediaQuery.of(context).size.height,
+              height: 300,
+              child: Center(
+                child:
+                    /*
+              RiveAnimation.network(
+                'https://cdn.rive.app/animations/vehicles.riv',
+              ),
+               */
+                    RiveAnimation.asset(
+                  'assets/textanimation.riv',
+                ),
+              ),
+            ),
+            Center(
               child: TextWidget(
-                  "Der StartScreen stellt den Einstieg in die App dar. "),
-            )),
+                  "Der StartScreen stellt den Einstieg in die App dar."
+                  " Hier kann eine Anfangsanimation laufen oder ein"
+                  " Bild gezeigt werden."
+                  " Gleichzeitig können die Modelle initialisiert werden."),
+            ),
             _weiter(context),
-            _space100(),
+            //_space100(),
           ],
         ),
       ),

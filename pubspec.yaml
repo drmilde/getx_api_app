@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.4
   shared_preferences: ^2.0.8
   google_fonts: ^2.1.0
+  rive: ^0.7.33
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +67,7 @@ flutter:
   assets:
     - assets/products.json
     - assets/config.json
-  #   - images/a_dot_ham.jpeg
+    - assets/textanimation.riv
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

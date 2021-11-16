@@ -45,7 +45,7 @@ class _LoaderScreenState extends State<LoaderScreen> {
         Container(
           child: TextWidget("Hier wird die Konfiguration aus einer"
               " JSON-Datei geladen. Aktuell befindet sich die Datei"
-              " im Assets Folder der Anwendung.\n"
+              " im Assets-Folder der Anwendung.\n"
               "Das Laden der Daten erfolgt über einen FutureBuilder."),
         ),
         _space100(),

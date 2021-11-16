@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
             child: TextWidget("Hier werden die Daten der Anwendung geladen."
-                " Acuh hier wird asynchron gearbeitet und die Daten in einem"
+                " Auch hier wird asynchron gearbeitet und die Daten in einem"
                 " GetxController als Observable abgelegt."),
           ),
           Expanded(
