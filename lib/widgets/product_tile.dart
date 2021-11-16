@@ -5,15 +5,18 @@ import 'package:getx_api_app/screens/product_details_screen.dart';
 class ProductTile extends StatelessWidget {
   final Product product;
   int index;
+  bool isClickable = true;
 
-  ProductTile(this.product, this.index);
+  ProductTile(this.product, this.index, {this.isClickable = true});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ProductDetailsScreen(index)));
+        if (isClickable) {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ProductDetailsScreen(index)));
+        }
       },
       child: Card(
         elevation: 2,
@@ -71,7 +74,7 @@ class ProductTile extends StatelessWidget {
                   ),
                 ),
               SizedBox(height: 8),
-              Text('\$${product.price}',
+              Text('\$${product.price!.toStringAsFixed(2)}',
                   style: TextStyle(fontSize: 32, fontFamily: 'avenir')),
             ],
           ),

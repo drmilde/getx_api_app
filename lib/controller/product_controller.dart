@@ -17,6 +17,10 @@ class ProductController extends GetxController {
     warenkorb.clear();
   }
 
+  void removeFromWarenkorb(int index) {
+    warenkorb.removeAt(index);
+  }
+
   @override
   void onInit() {
     super.onInit();
