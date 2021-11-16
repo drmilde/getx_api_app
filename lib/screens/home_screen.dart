@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
       mainAxisSpacing: 16,
       crossAxisCount: 2,
       itemBuilder: (context, index) {
-        return ProductTile(productController.productList[index]);
+        return ProductTile(productController.productList[index], index);
       },
       staggeredTileBuilder: (fit) {
         return StaggeredTile.fit(1);
