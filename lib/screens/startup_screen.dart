@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_api_app/screens/loader_screen.dart';
+import 'package:getx_api_app/screens/tts/simple_tts_screen.dart';
 import 'package:getx_api_app/widgets/text_widget.dart';
 import 'package:rive/rive.dart';
 
@@ -40,7 +41,9 @@ class StartupScreen extends StatelessWidget {
                   " Bild gezeigt werden."
                   " Gleichzeitig können die Modelle initialisiert werden."),
             ),
-            _weiter(context),
+            _weiter(context, "weiter", LoaderScreen()),
+            //_weiter(context, "tts", TtsScreen()),
+            _weiter(context, "tts2", SimpleTtsScreen()),
             //_space100(),
           ],
         ),
@@ -54,13 +57,13 @@ class StartupScreen extends StatelessWidget {
     );
   }
 
-  Widget _weiter(BuildContext context) {
+  Widget _weiter(BuildContext context, String text, Widget target) {
     return Container(
       child: ElevatedButton(
-        child: Text("weiter"),
+        child: Text(text),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => LoaderScreen()));
+              .push(MaterialPageRoute(builder: (context) => target));
         },
       ),
     );
