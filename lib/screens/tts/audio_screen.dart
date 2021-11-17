@@ -33,12 +33,26 @@ class _AudioScreenState extends State<AudioScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            Container(child: TextWidget("Wiedergabe von Audio")),
+            Container(child: TextWidget("Wiedergabe von Audio: alternativ"
+                " zum TTS System könnte man einen Audioplayer einsetzen."
+                " Dazu muss man natürlich die Texte einsprechen,"
+                " was aber zumindestens für die statischen Texte der App"
+                " problemlos möglich ist."
+                " Anders sieht es mit den Stellenbeschreibungen aus: diese"
+                " enthalten natürlich jeweils neue Texte. "
+                " Vielleicht ist es möglich, die Texte über das Handy"
+                " direkt in der App aufzunehmen. Kein Ahnung.")),
             ElevatedButton(
               onPressed: () {
                 play();
               },
               child: Text("play"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                stop();
+              },
+              child: Text("stop"),
             ),
           ],
         ),
@@ -49,6 +63,15 @@ class _AudioScreenState extends State<AudioScreen> {
   void play() async {
     duration = await player.setAsset('assets/erster_versuch.mp3');
     player.play(); // Usually you don't want to wait for playback to finish.
+
+    //var duration = await player.setUrl('https://foo.com/bar.mp3');
+    //var duration = await player.setFilePath('/path/to/file.mp3');
+    //await player.seek(Duration(seconds: 10));
+    //await player.pause();
+  }
+
+  void stop() {
+    player.stop(); // Usually you don't want to wait for playback to finish.
 
     //var duration = await player.setUrl('https://foo.com/bar.mp3');
     //var duration = await player.setFilePath('/path/to/file.mp3');
