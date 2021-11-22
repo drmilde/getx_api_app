@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_api_app/screens/loader_screen.dart';
+import 'package:getx_api_app/screens/multimodal/multimodal_screen.dart';
 import 'package:getx_api_app/screens/tts/audio_screen.dart';
 import 'package:getx_api_app/screens/tts/simple_tts_screen.dart';
 import 'package:getx_api_app/screens/video/video_screen.dart';
@@ -51,6 +52,7 @@ class StartupScreen extends StatelessWidget {
               _weiter(context, "audio", AudioScreen()),
               _weiter(context, "video", VideoScreen()),
               _weiter(context, "video2", YoutubeAppDemo()),
+              _weiter(context, "multimodal", MultimodalScreen()),
               //_space100(),
             ],
           ),
