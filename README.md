@@ -16,6 +16,7 @@ enthält:
   - Videoausgabe (youtube_player_iframe)
   - Spaltenbasierte Liste (flutter_staggered_grid_view )
   - Fonts (google_fonts)
+  - Multimodales Widget (einfache Version mit Stack)
 
 # Tools
   - https://app.quicktype.io/
