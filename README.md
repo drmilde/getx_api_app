@@ -1,6 +1,6 @@
 # getx_api_app
 
-#Erläuterungen zum Technologieprototypen
+# Erläuterungen zum Technologieprototypen
 
   - https://github.com/drmilde/getx_api_app.git
 
@@ -17,11 +17,11 @@ enthält:
 - Spaltenbasierte Liste (flutter_staggered_grid_view )
 - Fonts (google_fonts)
 
-#Tools
+# Tools
     - https://app.quicktype.io/
     - https://rive.app/
 
-#Was fehlt noch:
+# Was fehlt noch:
 
  - lokales Speichern (shared_preferences)
 
