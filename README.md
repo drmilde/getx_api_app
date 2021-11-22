@@ -18,10 +18,10 @@ enthält:
 - Fonts (google_fonts)
 
 #Tools
-    https://app.quicktype.io/
-    https://rive.app/
+    - https://app.quicktype.io/
+    - https://rive.app/
 
-#was fehlt noch:
+#Was fehlt noch:
 
  - lokales Speichern (shared_preferences)
 
