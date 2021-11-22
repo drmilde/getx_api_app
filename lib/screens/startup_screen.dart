@@ -3,6 +3,7 @@ import 'package:getx_api_app/screens/loader_screen.dart';
 import 'package:getx_api_app/screens/tts/audio_screen.dart';
 import 'package:getx_api_app/screens/tts/simple_tts_screen.dart';
 import 'package:getx_api_app/screens/video/video_screen.dart';
+import 'package:getx_api_app/screens/video/youtube_screen.dart';
 import 'package:getx_api_app/widgets/text_widget.dart';
 import 'package:rive/rive.dart';
 
@@ -49,6 +50,7 @@ class StartupScreen extends StatelessWidget {
               _weiter(context, "tts2", SimpleTtsScreen()),
               _weiter(context, "audio", AudioScreen()),
               _weiter(context, "video", VideoScreen()),
+              _weiter(context, "video2", YoutubeAppDemo()),
               //_space100(),
             ],
           ),
