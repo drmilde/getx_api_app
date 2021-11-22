@@ -1,16 +1,27 @@
 # getx_api_app
 
-A new Flutter project.
+#Erläuterungen zum Technologieprototypen
 
-## Getting Started
+  - https://github.com/drmilde/getx_api_app.git
 
-This project is a starting point for a Flutter application.
+enthält:
 
-A few resources to get you started if this is your first Flutter project:
+- Datenmodell
+    - modelliert in JSON
+- Statemanagement (get)
+- Lokale Daten (und auch remote mit http)
+- Animationen (rive)
+- Sprachausgabe (flutter_tts)
+- Audioausgabe (just_audio)
+- Videoausgabe (youtube_player_iframe)
+- Spaltenbasierte Liste (flutter_staggered_grid_view )
+- Fonts (google_fonts)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#Tools
+    https://app.quicktype.io/
+    https://rive.app/
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#was fehlt noch:
+
+ - lokales Speichern (shared_preferences)
+

@@ -17,7 +17,7 @@ class TextWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(text!,
                 textAlign: TextAlign.justify,
-                style: GoogleFonts.aBeeZee(
+                style: GoogleFonts.roboto(
                   fontSize: 20,
                 )),
           )),
