@@ -17,6 +17,7 @@ enthält:
   - Spaltenbasierte Liste (flutter_staggered_grid_view )
   - Fonts (google_fonts)
   - Multimodales Widget (einfache Version mit Stack)
+  - OpenStreetMap eingebaut
 
 # Tools
   - https://app.quicktype.io/
