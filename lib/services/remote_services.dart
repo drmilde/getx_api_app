@@ -35,4 +35,9 @@ class RemoteServices {
     var result = configurationFromJson(jsonString);
     return result;
   }
+
+
+  // TODO Nominatim OpenStreetMap in Services integrieren
+
+  // https://nominatim.openstreetmap.org/search?q=antoniusheim+cafe+fulda+deutschland&format=json
 }

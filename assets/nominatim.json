@@ -1,0 +1,21 @@
+[
+  {
+    "place_id": 14636962,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 1479400272,
+    "boundingbox": [
+      "50.5553035",
+      "50.5554035",
+      "9.6581091",
+      "9.6582091"
+    ],
+    "lat": "50.5553535",
+    "lon": "9.6581591",
+    "display_name": "Cafeteria Antoniusheim, 58, St.-Vinzenz-Straße, Münsterfeld, Westend, Fulda, Landkreis Fulda, Hessen, 36041, Deutschland",
+    "class": "amenity",
+    "type": "cafe",
+    "importance": 0.401,
+    "icon": "https://nominatim.openstreetmap.org/ui/mapicons//food_cafe.p.20.png"
+  }
+]
