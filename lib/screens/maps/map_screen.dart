@@ -4,7 +4,9 @@ import 'package:getx_api_app/widgets/text_widget.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapScreen extends StatelessWidget {
-  const MapScreen({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+
+  MapScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,12 @@ class MapScreen extends StatelessWidget {
                 " können."),
             Padding(
               padding: const EdgeInsets.all(8.0),
+              child: _buildForm(context),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Container(
-                height:300,
+                height: 300,
                 child: _buildFlutterMap(),
               ),
             ),
@@ -54,6 +60,44 @@ class MapScreen extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+
+  Widget _buildForm(BuildContext context) {
+    return Container(
+      width: 250,
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextFormField(
+              initialValue: "Antoniusheim Cafe",
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Gib eine Adresse ein!';
+                }
+                return null;
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
+                  child: const Text('Suche'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
