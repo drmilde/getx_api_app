@@ -11,10 +11,27 @@ class AdressEingabeScreen extends StatefulWidget {
 
 class AdressEingabeScreenState extends State<AdressEingabeScreen> {
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _controller = TextEditingController();
+  late TextFormField _field;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _field = TextFormField(
+      controller: _controller,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return widget(child: _buildForm(context));
+    return _buildForm(context);
   }
 
   Widget _buildForm(BuildContext context) {
@@ -23,25 +40,18 @@ class AdressEingabeScreenState extends State<AdressEingabeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextFormField(
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-          ),
+          _field,
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
+                    SnackBar(content: Text("${_controller.text}")),
                   );
                 }
               },
-              child: const Text('Submit'),
+              child: const Text('Suche'),
             ),
           ),
         ],
