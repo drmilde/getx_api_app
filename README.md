@@ -18,6 +18,7 @@ enthält:
   - Fonts (google_fonts)
   - Multimodales Widget (einfache Version mit Stack)
   - OpenStreetMap eingebaut (flutter_map)
+    - jetzt auch mit Suche über https://nominatim.openstreetmap.org/
 
 # Tools
   - https://app.quicktype.io/
