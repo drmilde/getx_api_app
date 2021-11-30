@@ -19,6 +19,7 @@ enthält:
   - Multimodales Widget (einfache Version mit Stack)
   - OpenStreetMap eingebaut (flutter_map)
     - jetzt auch mit Suche über https://nominatim.openstreetmap.org/
+    - Home eingebaut
 
 # Tools
   - https://app.quicktype.io/
