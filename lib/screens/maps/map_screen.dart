@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:getx_api_app/model/nominatim.dart';
@@ -7,10 +9,20 @@ import 'package:latlong2/latlong.dart';
 
 class MapScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  late final _mapController;
   final TextEditingController _controller = TextEditingController();
   late TextFormField _field;
 
+  LatLng antoniusheim = new LatLng(50.5553535, 9.6581591);
+  late double lat = antoniusheim.latitude;
+  late double lng = antoniusheim.longitude;
+  double zoom = 17;
+
   MapScreen({Key? key}) : super(key: key) {
+    _mapController = MapController();
+    lat = antoniusheim.latitude;
+    lng = antoniusheim.longitude;
+
     _controller.text = "Antoniusheim Cafe";
     _field = TextFormField(
       controller: _controller,
@@ -45,6 +57,35 @@ class MapScreen extends StatelessWidget {
                   child: _buildFlutterMap(),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      zoom = zoom + 0.1;
+                      zoom = min(18, zoom);
+                      _mapController.move(LatLng(lat, lng), zoom);
+                    },
+                    child: Text("+"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      zoom = zoom - 0.1;
+                      zoom = max(1, zoom);
+                      _mapController.move(LatLng(lat, lng), zoom);
+                    },
+                    child: Text("-"),
+                  ),                  ElevatedButton(
+                    onPressed: () {
+                      zoom = 17;
+                      lat = antoniusheim.latitude;
+                      lng = antoniusheim.longitude;
+                      _mapController.move(LatLng(lat, lng), zoom);
+                    },
+                    child: Icon(Icons.home),
+                  ),
+                ],
+              )
             ],
           ),
         ),
@@ -53,11 +94,10 @@ class MapScreen extends StatelessWidget {
   }
 
   Widget _buildFlutterMap() {
-    LatLng pos = new LatLng(50.5553535, 9.6581591);
     return new FlutterMap(
+      mapController: _mapController,
       options: new MapOptions(
-        center: pos,
-        //center: new LatLng(51.5, -0.09),
+        center: antoniusheim,
         zoom: 17.0,
       ),
       layers: [
@@ -69,7 +109,7 @@ class MapScreen extends StatelessWidget {
             new Marker(
               width: 20.0,
               height: 20.0,
-              point: pos,
+              point: antoniusheim,
               builder: (ctx) => new Container(
                 child: new FlutterLogo(),
               ),
@@ -96,16 +136,24 @@ class MapScreen extends StatelessWidget {
                   onPressed: () async {
                     String search = _controller.text;
                     if (_formKey.currentState!.validate()) {
-
-                      List<Nominatim> liste = await RemoteServices.fetchCoordinates(search);
+                      List<Nominatim> liste =
+                          await RemoteServices.fetchCoordinates(search);
                       if (!liste.isEmpty) {
-                        print (liste[0].lat);
-                        print (liste[0].lon);
+                        print(liste[0].lat);
+                        print(liste[0].lon);
+
+                        lat = double.tryParse(liste[0].lat!) ??
+                            antoniusheim.latitude;
+                        lng = double.tryParse(liste[0].lon!) ??
+                            antoniusheim.longitude;
+
+                        _mapController.move(LatLng(lat, lng), zoom);
                       }
 
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("${search}")),
                       );
+                      FocusScope.of(context).unfocus();
                     }
                   },
                   child: const Text('Suche'),

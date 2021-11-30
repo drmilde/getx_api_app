@@ -37,7 +37,6 @@ class RemoteServices {
   }
 
   // TODO Nominatim OpenStreetMap in Services integrieren
-
   // https://nominatim.openstreetmap.org/search?q=antoniusheim+cafe+fulda+deutschland&format=json
 
   static Future<List<Nominatim>> fetchCoordinates(String search) async {
