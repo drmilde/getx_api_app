@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:getx_api_app/screens/loader_screen.dart';
 import 'package:getx_api_app/screens/maps/map_screen.dart';
 import 'package:getx_api_app/screens/multimodal/multimodal_screen.dart';
+import 'package:getx_api_app/screens/themes/switch_theme_screen.dart';
+import 'package:getx_api_app/screens/themes/theme/theme_manager.dart';
 import 'package:getx_api_app/screens/tts/audio_screen.dart';
 import 'package:getx_api_app/screens/tts/simple_tts_screen.dart';
 import 'package:getx_api_app/screens/video/video_screen.dart';
@@ -10,7 +12,8 @@ import 'package:getx_api_app/widgets/text_widget.dart';
 import 'package:rive/rive.dart';
 
 class StartupScreen extends StatelessWidget {
-  const StartupScreen({Key? key}) : super(key: key);
+  ThemeManager? themeManager;
+  StartupScreen({this.themeManager, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +58,7 @@ class StartupScreen extends StatelessWidget {
               _weiter(context, "video2", YoutubeAppDemo()),
               _weiter(context, "multimodal", MultimodalScreen()),
               _weiter(context, "map", MapScreen()),
+              _weiter(context, "themes", SwitchThemeScreen(themeManager!)),
               //_space100(),
             ],
           ),
