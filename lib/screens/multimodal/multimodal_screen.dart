@@ -16,6 +16,8 @@ class MultimodalScreen extends StatelessWidget {
                 _buildSizedBox(),
                 MultimodalWidget(
                   type: 1,
+                  textToDisplay: "Startbahn.",
+                  textToSpeak: "Startbahn. Mit Anlauf in ein selbstbestimmtes Leben.",
                   content: Container(
                     child: Image.network(
                         "https://www.antonius.de/files/antonius/bilder/logos/AN_Logos_Spalte-re_B250px.png"),
@@ -27,6 +29,8 @@ class MultimodalScreen extends StatelessWidget {
                 _buildSizedBox(),
                 MultimodalWidget(
                   type: 2,
+                  textToDisplay: "Startbahn.",
+                  textToSpeak: "Startbahn. Mit Anlauf in ein selbstbestimmtes Leben.",
                   content: Container(
                     height: 100,
                     width: double.infinity,
