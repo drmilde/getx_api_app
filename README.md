@@ -20,6 +20,8 @@ enthält:
   - OpenStreetMap eingebaut (flutter_map)
     - jetzt auch mit Suche über https://nominatim.openstreetmap.org/
     - Home eingebaut
+  - Themeswitchung eingebaut    
+
 
 # Tools
   - https://app.quicktype.io/
