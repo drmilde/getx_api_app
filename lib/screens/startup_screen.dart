@@ -49,14 +49,22 @@ class StartupScreen extends StatelessWidget {
                     " Gleichzeitig können die Modelle initialisiert werden."),
               ),
               _weiter(context, "weiter", LoaderScreen()),
+              _spacer(16),
               //_weiter(context, "tts", TtsScreen()),
               _weiter(context, "tts2", SimpleTtsScreen()),
+              _spacer(16),
               _weiter(context, "audio", AudioScreen()),
+              _spacer(16),
               _weiter(context, "video", VideoScreen()),
+              _spacer(16),
               _weiter(context, "video2", YoutubeAppDemo()),
+              _spacer(16),
               _weiter(context, "multimodal", MultimodalScreen()),
+              _spacer(16),
               _weiter(context, "map", MapScreen()),
+              _spacer(16),
               _weiter(context, "themes", ThemeMainScreen()),
+              _spacer(16),
               //_space100(),
             ],
           ),
@@ -65,9 +73,9 @@ class StartupScreen extends StatelessWidget {
     );
   }
 
-  Widget _space100() {
+  Widget _spacer(double height) {
     return SizedBox(
-      height: 100,
+      height: height,
     );
   }
 

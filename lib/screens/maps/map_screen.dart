@@ -7,19 +7,30 @@ import 'package:getx_api_app/services/remote_services.dart';
 import 'package:getx_api_app/widgets/text_widget.dart';
 import 'package:latlong2/latlong.dart';
 
-class MapScreen extends StatelessWidget {
+class MapScreen extends StatefulWidget {
+  MapScreen({Key? key}) : super(key: key) {}
+
+  @override
+  State<MapScreen> createState() => _MapScreenState();
+}
+
+class _MapScreenState extends State<MapScreen> {
   final _formKey = GlobalKey<FormState>();
-  late final _mapController;
   final TextEditingController _controller = TextEditingController();
+  late final _flutterMap;
+  late final _mapController;
   late TextFormField _field;
 
   LatLng antoniusheim = new LatLng(50.5553535, 9.6581591);
   late double lat = antoniusheim.latitude;
   late double lng = antoniusheim.longitude;
+
   double zoom = 17;
 
-  MapScreen({Key? key}) : super(key: key) {
+  @override
+  void initState() {
     _mapController = MapController();
+    _flutterMap = _buildFlutterMap();
     lat = antoniusheim.latitude;
     lng = antoniusheim.longitude;
 
@@ -33,6 +44,13 @@ class MapScreen extends StatelessWidget {
         return null;
       },
     );
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -54,7 +72,7 @@ class MapScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   height: 300,
-                  child: _buildFlutterMap(),
+                  child: _flutterMap,
                 ),
               ),
               Row(
@@ -75,7 +93,8 @@ class MapScreen extends StatelessWidget {
                       _mapController.move(LatLng(lat, lng), zoom);
                     },
                     child: Text("-"),
-                  ),                  ElevatedButton(
+                  ),
+                  ElevatedButton(
                     onPressed: () {
                       zoom = 17;
                       lat = antoniusheim.latitude;
