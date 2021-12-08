@@ -30,7 +30,10 @@ class MultimodalScreen extends StatelessWidget {
                 MultimodalWidget(
                   type: 2,
                   textToDisplay: "Startbahn.",
-                  textToSpeak: "Startbahn. Mit Anlauf in ein selbstbestimmtes Leben.",
+                  textToSpeak: "Startbahn. Mit Anlauf in ein selbstbestimmtes Leben."
+                      " Die Startbahn ist eine Arbeitsschule und bereitet"
+                      " junge Menschen auf Ausbildung und Beruf vor."
+                      " Es ist die erste anerkannte Schule dieser Art .",
                   content: Container(
                     height: 100,
                     width: double.infinity,

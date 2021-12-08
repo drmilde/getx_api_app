@@ -17,14 +17,14 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-      initialVideoId: 'vn5Rx95W6tE',
+      initialVideoId: '5JyTa1mPcVo',
       params: const YoutubePlayerParams(
         playlist: [
-          'vn5Rx95W6tE',
           '5JyTa1mPcVo',
-          '99DfoGjfU6Y',
           'Yy3o6EzhRk8',
+          '99DfoGjfU6Y',
           'BmnX1lJL72M',
+          'vn5Rx95W6tE',
         ],
         startAt: const Duration(minutes: 0, seconds: 0),
         showControls: true,
@@ -143,37 +143,28 @@ class Controls extends StatelessWidget {
         children: [
           _space,
           //MetaDataSection(),
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.deepOrange,
-          ),
+          _buildTile("Perspektiva"),
           _space,
-          //SourceInputSection(),
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.deepOrange,
-          ),
+          _buildTile("Startbahn. Arbeitsschule Antoniousheim."),
           _space,
-          //PlayPauseButtonBar(),
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.deepOrange,
-          ),
+          _buildTile("Ausbildung mit Behinderung."),
           _space,
-          //VolumeSlider(),
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Colors.deepOrange,
-          ),
+          _buildTile("Qualifizierungsbausteine"),
           _space,
-          //PlayerStateSection(),
+          _buildTile("Barrieren brechen - Inklusion stärken"),
+          _space,
         ],
       ),
     );
+  }
+
+  Container _buildTile(String text) {
+    return Container(
+          height: 50,
+          width: double.infinity,
+          child: Center(child: Text(text)),
+          color: Colors.deepOrange,
+        );
   }
 
   Widget get _space => const SizedBox(height: 10);
