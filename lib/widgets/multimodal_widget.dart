@@ -32,7 +32,7 @@ class MultimodalWidget extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   speakDe(textToSpeak);
-                  speakEn(textToSpeak);
+                  //speakEn(textToSpeak);
                 },
                 icon: Icon(Icons.play_arrow_outlined),
                 color: Colors.green,
@@ -62,7 +62,7 @@ class MultimodalWidget extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   speakDe(textToSpeak);
-                  speakEn(textToSpeak);
+                  //speakEn(textToSpeak);
                 },
                 icon: Icon(Icons.play_arrow_outlined),
                 color: Colors.green,
