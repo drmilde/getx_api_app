@@ -5,6 +5,7 @@ import 'package:getx_api_app/screens/multimodal/multimodal_screen.dart';
 import 'package:getx_api_app/screens/themes/theme_main_screen.dart';
 import 'package:getx_api_app/screens/tts/audio_screen.dart';
 import 'package:getx_api_app/screens/tts/simple_tts_screen.dart';
+import 'package:getx_api_app/screens/usewidgets/two_button_screen.dart';
 import 'package:getx_api_app/screens/video/video_screen.dart';
 import 'package:getx_api_app/screens/video/youtube_screen.dart';
 import 'package:getx_api_app/widgets/text_widget.dart';
@@ -64,6 +65,8 @@ class StartupScreen extends StatelessWidget {
               _weiter(context, "map", MapScreen()),
               _spacer(16),
               _weiter(context, "themes", ThemeMainScreen()),
+              _spacer(16),
+              _weiter(context, "two buttons", TwoButtonScreen()),
               _spacer(16),
               //_space100(),
             ],
