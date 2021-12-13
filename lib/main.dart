@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_api_app/screens/themes/theme/theme_constants.dart';
 
 import 'controller/theme_controller.dart';
 import 'screens/startup_screen.dart';
